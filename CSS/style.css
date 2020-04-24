@@ -4,7 +4,7 @@ body {
 
 .card {
     height: 140px;
-    background-color: white;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     padding: 5px;
     margin-bottom: 10px;
     font-family: Helvetica;
