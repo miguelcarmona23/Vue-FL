@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Film List</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://image.flaticon.com/icons/svg/61/61342.svg">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<body>
+    <div id="app" v-scroll="onScroll">
+        <div class="card" v-for="(card, index) in styledCards" :style="card.style" :key="index">
+            <img class="card__image" :src="card.img">
+            <div class="card__content">
+                <h3>{{card.title}}</h3>
+                <p>{{card.description}}</p>
+                <div class="card__rating">
+                    <span>{{card.rating | oneDecimal}} </span>
+                    <span class="card__stars--active">{{card.stars | toStars}}</span>
+                    <span class="card__stars--inactive">{{ 5 - card.stars | toStars}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!--Javascript-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17-beta.0/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script src="JS/script.js"></script>
+
+</html>
